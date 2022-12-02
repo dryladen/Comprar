@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+.bg-blue {
+  background: #166197;
+}
+
+.bg-white {
+  color: #317bb1;
+  font-weight: bold;
+}
+
+.bg-white:hover {
+  color: #57afed;
+}
+
+.bg-light-blue {
+  background: #317bb1;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+}
+.jumbotron {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.jumbo-text {
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 72px;
+}
+.harga-web {
+  height: 534px;
+  background: #f0f0f0;
+}
+
+.paket {
+  width: 340px;
+  height: 377px;
+}
+.paket-nama {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 76px;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 36px;
+  background: #317bb1;
+  border: 1px solid #317bb1;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.harga {
+  width: 340px;
+  height: 97px;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 60px;
+  color: #ffffff;
+  background: #9b9b9b;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.fitur {
+  height: 205px;
+  background: #e3e2e2;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0 0 20px 20px;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.beli {
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+  width: 220px;
+  height: 52px;
+}
+
+.login-field {
+  width: 560px;
+  background: #317bb1;
+  box-shadow: 0px 6px 10px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 5px;
+}
+
+label {
+  font-weight: 800;
+  line-height: 30px;
+  color: #ffffff;
+  background: #317bb1;
+}
+
+input {
+  height: 48px;
+}
+::placeholder {
+  font-weight: 800;
+  color: #9b9b9b;
+}
+form {
+  background: #317bb1;
+}
