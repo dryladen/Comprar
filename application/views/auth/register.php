@@ -1,7 +1,7 @@
 <div class="container-fluid pt-4 d-flex flex-column justify-content-center align-items-center">
   <div class="login-field mt-3 p-4">
     <h3 class="text-center text-white fw-bold py-1">Register</h3>
-    <form class="mt-3" method="POST" action="">
+    <form class="mt-3 text-white" method="POST" action="">
       <div class="bg-light-blue ">
         <label for="nama">Nama</label>
         <input type="text" class="form-control shadow mb-3" id="nama" placeholder="Nama" name="nama" value="<?= set_value('nama') ?>"/>
@@ -9,7 +9,7 @@
       </div>
       <div class="bg-light-blue ">
         <label for="email">Email</label>
-        <input type="email" class="form-control shadow mb-3" id="email" placeholder="Email" name="email" value="<?= set_value('email') ?>"/>
+        <input type="email" class="form-control shadow mb-3" id="email" placeholder="example@gmail.com" name="email" value="<?= set_value('email') ?>"/>
         <?= form_error('email','<small id="emailError" class="form-text text-white text-bg-danger p-1">','</small>') ?>
       </div>
       <div class="form-group row mb-4">

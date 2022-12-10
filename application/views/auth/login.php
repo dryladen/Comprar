@@ -2,10 +2,10 @@
   <div class="login-field mt-5 p-4">
     <h3 class="text-center text-white fw-bold py-1">Login</h3>
     <?= $this->session->flashdata('message'); ?>
-    <form class="mt-3" method="POST" action="<?= base_url('auth') ?>">
+    <form class="mt-3 text-white" method="POST" action="<?= base_url('auth') ?>">
       <div class="bg-light-blue ">
         <label for="email">Email</label>
-        <input type="email" class="form-control shadow mb-3" id="email" placeholder="Email" name="email" />
+        <input type="email" class="form-control shadow mb-3" id="email" placeholder="example@gmail.com" name="email" />
         <?= form_error('nama','<small id="namaError" class="form-text text-white text-bg-danger p-1">','</small>') ?>
       </div>
       <div class="bg-light-blue ">

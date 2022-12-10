@@ -23,7 +23,7 @@
       <a class="nav-link" href="<?= base_url('admin/dashboard') ?>">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
-      <a class="nav-link" href="<?= base_url('admin/dashboard') ?>">
+      <a class="nav-link" href="<?= base_url('admin') ?>">
         <i class="fas fa-fw fa-box-open"></i>
         <span>Data Barang</span></a>
     </li>

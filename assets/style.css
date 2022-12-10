@@ -102,8 +102,6 @@
 label {
   font-weight: 800;
   line-height: 30px;
-  color: #ffffff;
-  background: #317bb1;
 }
 
 input {
@@ -112,7 +110,4 @@ input {
 ::placeholder {
   font-weight: 800;
   color: #9b9b9b;
-}
-form {
-  background: #317bb1;
 }

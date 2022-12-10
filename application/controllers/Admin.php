@@ -2,7 +2,8 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 class Admin extends CI_Controller
 {
-  public function __construct(){
+  public function __construct()
+  {
     parent::__construct();
   }
 
@@ -21,34 +22,70 @@ class Admin extends CI_Controller
     $data['barang'] = $this->db->get('barang')->result_array();
 
     // rules form validation
-    $this->form_validation->set_rules('nama', 'Nama', 'required');
-    $this->form_validation->set_rules('harga', 'Harga', 'required');
+    $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+    $this->form_validation->set_rules('harga', 'Harga', 'required|trim');
+    $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required|trim');
     // jika belum validasi form tambah barang
     if ($this->form_validation->run() == false) {
       $this->load->view('templates/header', $data);
       $this->load->view('admin/templates/sidebar');
       $this->load->view('admin/templates/topbar');
-      $this->load->view('admin/dashboard');
+      $this->load->view('admin/dataBarang');
       $this->load->view('admin/templates/footer');
       $this->load->view('templates/footer');
     } else {
-      $this->db->insert('barang', ['nama' => $this->input->post('nama'), 'harga' => $this->input->post('harga')]);
+      $uploadGambar = $_FILES['gambar'];
+      $namaGambar = 'default-item.png';
+      if ($uploadGambar) {
+        $config['allowed_types'] = 'jpg|png|jpeg';
+        $config['max_size'] = '2048';
+        $config['upload_path'] = './assets/img/barang/';
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('gambar')) {
+          $namaGambar = $this->upload->data('file_name');
+        } else {
+          echo $this->upload->display_errors();
+        }
+      }
+      $this->db->insert('barang', [
+        'nama' => $this->input->post('nama'),
+        'harga' => $this->input->post('harga'),
+        'deskripsi' => $this->input->post('deskripsi'),
+        'gambar' => $namaGambar
+      ]);
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Tambah barang berhasil !</div>');
       redirect('admin');
     }
   }
 
-  public function ubahBarang()
+  public function ubahBarang($id)
   {
     $data["title"] = "Ubah Data";
     $user['nama'] = 'User';
     $data['user'] = $user;
-    $this->load->view('templates/header', $data);
-    $this->load->view('admin/templates/sidebar');
-    $this->load->view('admin/templates/topbar');
-    $this->load->view('admin/ubahBarang');
-    $this->load->view('admin/templates/footer');
-    $this->load->view('templates/footer');
+    $data['item'] = $this->db->get_where('barang', ['id' => $id])->row_array();
+    $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+    $this->form_validation->set_rules('harga', 'Harga', 'required|trim');
+    if (count($data['item']) > 0) {
+      if ($this->form_validation->run() == false) {
+        $this->load->view('templates/header', $data);
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/templates/topbar');
+        $this->load->view('admin/ubahBarang', $data);
+        $this->load->view('admin/templates/footer');
+        $this->load->view('templates/footer');
+      } else {
+        $this->db->set('nama', $this->input->post('nama'));
+        $this->db->set('harga', $this->input->post('harga'));
+        $this->db->where('id', $id);
+        $this->db->update('barang');
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Ubah barang berhasil !</div>');
+        redirect('admin');
+      }
+    } else {
+      $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Ubah barang gagal ! id tidak ditemukan</div>');
+      redirect('admin');
+    }
   }
 
   public function hapusBarang($id)
@@ -61,5 +98,20 @@ class Admin extends CI_Controller
       $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Hapus barang gagal ! id tidak ditemukan</div>');
       redirect('admin');
     }
+  }
+
+  public function dashboard()
+  {
+    $data["title"] = "Ubah Data";
+    $user['nama'] = 'User';
+    $data['user'] = $user;
+    $data['lenBarang'] = count($this->db->get('barang')->result_array());
+    $data['lenAkun'] = count($this->db->get('akun')->result_array());
+    $this->load->view('templates/header', $data);
+    $this->load->view('admin/templates/sidebar');
+    $this->load->view('admin/templates/topbar');
+    $this->load->view('admin/dashboard', $data);
+    $this->load->view('admin/templates/footer');
+    $this->load->view('templates/footer');
   }
 }
