@@ -1,7 +1,7 @@
 <?php $title = "Landing Page";?>
 <nav role="navigation" class="navbar navbar-expand-lg bg-blue text-white fw-bold">
   <div class="container-fluid mx-sm-5">
-    <a href="#" class="navbar-brand text-white fw-bold">WebKuy</a>
+    <a href="#" class="navbar-brand text-white fw-bold">Comprar</a>
     <ul class="navbar-nav px-5 mx-sm-5 d-flex justify-content-evenly">
       <li class="p-2 nav-item"><a href="#">Home</a></li>
       <li class="p-2 nav-item"><a href="<?= base_url('auth/logout') ?>">Log Out</a></li>
