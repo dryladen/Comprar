@@ -75,8 +75,26 @@ class Admin extends CI_Controller
         $this->load->view('admin/templates/footer');
         $this->load->view('templates/footer');
       } else {
+        $uploadGambar = $_FILES['gambar'];
+        if ($uploadGambar) {
+          $config['allowed_types'] = 'jpg|png|jpeg';
+          $config['max_size'] = '2048';
+          $config['upload_path'] = './assets/img/barang/';
+          $this->load->library('upload', $config);
+          if ($this->upload->do_upload('gambar')) {
+            $gambarLama = $data['item']['gambar'];
+            if($gambarLama != 'default-item.png'){
+              unlink(FCPATH . 'assets/img/barang/' . $gambarLama);
+            }
+            $gambarBaru = $this->upload->data('file_name');
+            $this->db->set('gambar',$gambarBaru);
+          } else {
+            echo $this->upload->display_errors();
+          }
+        }
         $this->db->set('nama', $this->input->post('nama'));
         $this->db->set('harga', $this->input->post('harga'));
+        $this->db->set('deskripsi', $this->input->post('deskripsi'));
         $this->db->where('id', $id);
         $this->db->update('barang');
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Ubah barang berhasil !</div>');
@@ -90,7 +108,11 @@ class Admin extends CI_Controller
 
   public function hapusBarang($id)
   {
-    if (count($this->db->get_where('barang', ['id' => $id])->result_array()) > 0) {
+    $item = $this->db->get_where('barang', ['id' => $id])->row_array();
+    if (count($item) > 0) {
+      if($item['gambar'] != 'default-item.png'){
+        unlink(FCPATH . 'assets/img/barang/' . $item['gambar']);
+      }
       $this->db->delete('barang', ['id' => $id]);
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Hapus barang berhasil !</div>');
       redirect('admin');
