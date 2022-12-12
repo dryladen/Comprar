@@ -29,7 +29,7 @@
       <!-- Right elements -->
       <div class="d-flex align-items-center">
         <!-- Icon -->
-        <a class="link-light me-3" href="#">
+        <a class="link-light me-3" href="<?= site_url('landingPage/keranjang') ?>">
           <i class="fas fa-shopping-cart"></i>
         </a>
 

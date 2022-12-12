@@ -64,8 +64,8 @@
                 <p class="card-text"><?= $barang[$i]['deskripsi'] ?></p>
                 <div class="row px-2">
 
-                  <button class="btn btn-primary btn-sm" type="button"><a class="nav-link text-white" href="<?= base_url('landingPage/detailBarang/') . $barang[$i]['id'] ?>">Detail</a></button>
-                  <button class="btn btn-outline-primary btn-sm mt-2" type="button">Tambah ke keranjang</button>
+                  <a class="btn btn-primary btn-sm" href="<?= site_url('landingPage/detailBarang/') . $barang[$i]['id'] ?>">Detail</a>
+                  <a class="btn btn-outline-primary btn-sm mt-2" href="<?= site_url('landingPage/keranjang/') . $barang[$i]['id'] ?>">Tambah ke keranjang</a>
                 </div>
               </div>
             </div>
