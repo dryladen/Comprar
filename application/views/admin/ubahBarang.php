@@ -1,4 +1,4 @@
-<div class="container-fluid vh-100">
+<div class="container-fluid">
   <div class="col col-7">
     <h1 class="h3 mb-4 text-gray-800">Ubah data barang</h1>
     <form action="<?= base_url('admin/ubahBarang/') . $item['id'] ?>" method="POST" enctype="multipart/form-data">
@@ -9,6 +9,14 @@
       <div class="form-group">
         <label for="harga">Harga</label>
         <input type="number" class="form-control" id="harga" name="harga" placeholder="Harga baru" value="<?= $item['harga'] ?>">
+      </div>
+      <div class="form-group">
+        <label for="jenis">Jenis</label>
+        <input type="text" class="form-control" id="jenis" name="jenis" placeholder="jenis baru" value="<?= $item['jenis'] ?>">
+      </div>
+      <div class="form-group">
+        <label for="stok">Stok</label>
+        <input type="number" class="form-control" id="stok" name="stok" placeholder="Stok baru" value="<?= $item['stok'] ?>">
       </div>
       <div class="form-group">
         <label for="deskripsi">Deskripsi</label>
@@ -32,7 +40,7 @@
           </div>
         </div>
       </div>
-      <button type="button" class="btn btn-secondary">Batal</button>
+      <a href="<?= base_url('admin') ?>" class="btn btn-secondary">Batal</a>
       <button type="submit" class="btn btn-primary">Ubah</button>
     </form>
   </div>

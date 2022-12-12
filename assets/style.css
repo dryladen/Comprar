@@ -1,5 +1,4 @@
 * {
-  box-sizing: border-box;
   font-family: "Poppins";
 }
 
@@ -18,59 +17,6 @@
 
 .bg-light-blue {
   background: #317bb1;
-}
-
-.nav-item a {
-  color: white;
-  text-decoration: none;
-}
-.jumbotron {
-  height: 400px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}
-.jumbo-text {
-  font-weight: 800;
-  font-size: 48px;
-  line-height: 72px;
-}
-.harga-web {
-  height: 534px;
-  background: #f0f0f0;
-}
-
-.paket {
-  width: 340px;
-  height: 377px;
-}
-.paket-nama {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  height: 76px;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 36px;
-  background: #317bb1;
-  border: 1px solid #317bb1;
-  border-radius: 20px 20px 0px 0px;
-}
-
-.harga {
-  width: 340px;
-  height: 97px;
-  font-weight: 800;
-  font-size: 40px;
-  line-height: 60px;
-  color: #ffffff;
-  background: #9b9b9b;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
 }
 
 .fitur {
@@ -111,3 +57,49 @@ input {
   font-weight: 800;
   color: #9b9b9b;
 }
+
+.carousel-item {
+  height: 65vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* ! List produk */
+body {
+  background: #eee;
+}
+.ratings i {
+  font-size: 16px;
+  color: red;
+}
+.strike-text {
+  color: red;
+  text-decoration: line-through;
+}
+.product-image {
+  width: 100%;
+}
+.dot {
+  height: 7px;
+  width: 7px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 3px;
+  background-color: blue;
+  border-radius: 50%;
+  display: inline-block;
+}
+.spec-1 {
+  color: #938787;
+  font-size: 15px;
+}
+h5 {
+  font-weight: 400;
+}
+.para {
+  font-size: 16px;
+}
+

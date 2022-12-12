@@ -2,11 +2,11 @@
 <div id="wrapper">
 
   <!-- Sidebar -->
-  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+  <ul class="navbar-nav bg-blue sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-      <div class="sidebar-brand-icon rotate-n-15">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('admin/dashboard') ?>">
+      <div class="sidebar-brand-icon">
         <i class="fas fa-fan"></i>
       </div>
       <div class="sidebar-brand-text mx-3">Comprar</div>
@@ -14,23 +14,28 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
-    <!-- Heading -->
-    <div class="sidebar-heading">
-      Administrator
-    </div>
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
       <a class="nav-link" href="<?= base_url('admin/dashboard') ?>">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
-      <a class="nav-link" href="<?= base_url('admin') ?>">
-        <i class="fas fa-fw fa-box-open"></i>
-        <span>Data Barang</span></a>
     </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
-
+    <div class="sidebar-heading">
+      Barang
+    </div>
+    <li class="nav-item">
+      <a class="nav-link" href="<?= base_url('admin') ?>">
+        <i class="fas fa-fw fa-box-open"></i>
+        <span>Data Barang</span>
+      </a>
+      <a class="nav-link" href="<?= base_url('admin') ?>">
+        <i class="fa-solid fa-truck-fast"></i>
+        <span>Pengiriman</span>
+      </a>
+    </li>
     <!-- Heading -->
     <div class="sidebar-heading">
       User
@@ -38,8 +43,14 @@
     <!-- Nav Item - Charts -->
     <li class="nav-item">
       <a class="nav-link" href="charts.html">
-        <i class="fas fa-fw fa-user"></i>
-        <span>Profile</span></a>
+        <i class="fa-solid fa-users"></i>
+        <span>Data Akun</span></a>
+    </li>
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+      <a class="nav-link" href="charts.html">
+        <i class="fa-solid fa-users"></i>
+        <span>Hero</span></a>
     </li>
 
     <!-- Divider -->
