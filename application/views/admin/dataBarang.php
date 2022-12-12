@@ -25,12 +25,12 @@
             <tr class="">
               <th class="col col-2">Nama</th>
               <th class="col col-1 text-center">Harga</th>
-              <th class="col col-2">Deskripsi</th>
+              <th class="col col-3">Deskripsi</th>
               <th class="col col-1 text-center">Gambar</th>
               <th class="col col-1 text-center">Jenis</th>
               <th class="col col-1 text-center">Stok</th>
               <th class="col col-1 text-center">Terjual</th>
-              <th class="col col-1 text-center">Event</th>
+              <th class="col col-2 text-center">Event</th>
             </tr>
           </thead>
           <tbody>
@@ -45,10 +45,10 @@
                   <td class="text-center"><?= $barang[$i]['stok'] ?></td>
                   <td class="text-center"><?= $barang[$i]['terjual'] ?></td>
                   <td class="text-center">
-                    <a href="<?= base_url('admin/ubahBarang/') . $barang[$i]['id'] ?>" class="btn btn-success btn-circle btn-md ">
+                    <a href="<?= base_url('admin/ubahBarang/') . $barang[$i]['id'] ?>" class="btn btn-success btn-md ">
                       <i class="fas fa-reguler fa-pen"></i>
                     </a>
-                    <a href="<?= base_url('admin/hapusBarang/') . $barang[$i]['id'] ?>" class="btn btn-danger btn-circle btn-md">
+                    <a href="<?= base_url('admin/hapusBarang/') . $barang[$i]['id'] ?>" class="btn btn-danger btn-md">
                       <i class="fas fa-trash"></i>
                     </a>
                   </td>

@@ -16,7 +16,7 @@
     <hr class="sidebar-divider my-0">
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-      <a class="nav-link" href="<?= base_url('admin/dashboard') ?>">
+      <a class="nav-link" href="<?= base_url('admin') ?>">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
     </li>
@@ -27,7 +27,7 @@
       Barang
     </div>
     <li class="nav-item">
-      <a class="nav-link" href="<?= base_url('admin') ?>">
+      <a class="nav-link" href="<?= base_url('admin/dataBarang') ?>">
         <i class="fas fa-fw fa-box-open"></i>
         <span>Data Barang</span>
       </a>
@@ -42,13 +42,13 @@
     </div>
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-      <a class="nav-link" href="charts.html">
+      <a class="nav-link" href="<?= base_url('admin/akun') ?>">
         <i class="fa-solid fa-users"></i>
         <span>Data Akun</span></a>
     </li>
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-      <a class="nav-link" href="charts.html">
+      <a class="nav-link" href="<?= base_url('admin/hero') ?>">
         <i class="fa-solid fa-users"></i>
         <span>Hero</span></a>
     </li>

@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid mb-4">
   <div class="col col-7">
     <h1 class="h3 mb-4 text-gray-800">Ubah data barang</h1>
     <form action="<?= base_url('admin/ubahBarang/') . $item['id'] ?>" method="POST" enctype="multipart/form-data">
