@@ -1,6 +1,16 @@
 # Comprar
 Website penjualan yang menyediakan barang - barang murah meriah
 
+## Akun manajer tester
+```
+Username : test@gmail.com
+Password : 123
+```
+## Akun staff tester
+```
+Username : staff@gmail.com
+Password : 123
+```
 ## Kebutuhan Fungsional
 > Pengujung
 
@@ -12,12 +22,13 @@ Website penjualan yang menyediakan barang - barang murah meriah
 - Pengunjung dapat melihat data barang berdasarkan filter
 - Pengunjung dapat mencari barang
 
-> Admin
+> Manajer
 
 - `Admin dapat melakukan login`
 - `Admin dapat melakukan log out`
 - `Admin dapat manajemen data barang `
-- `Admin dapat mencari barang`
+- `Admin dapat manajemen data akun `
+- `Admin dapat manajemen data hero `
 - Admin dapat melihat history pembelian
 - Admin dapat manajemen data pengiriman
 - Admin dapat memanajemen data hero di homepage
@@ -40,8 +51,11 @@ Website penjualan yang menyediakan barang - barang murah meriah
 - id : int
 - id_user : int
 - id_barang : int
+- jumlah : int
 > hero
 - id : int
 - gambar : varchar
 - label : varchar
 - deskripsi : varchar
+- id_pembuat : int
+- status : enum

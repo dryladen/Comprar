@@ -22,4 +22,4 @@
     rel="stylesheet">
 </head>
 
-<body>
+<body id="page-top">

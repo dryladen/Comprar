@@ -32,7 +32,8 @@
         if(password_verify($password,$user['password'])){
           $data = [
             'email' => $user['email'],
-            'level' => $user['level']
+            'level' => $user['level'],
+            'id' => $user['id']
           ];
           $this->session->set_userdata($data);
           redirect('landingPage');
@@ -49,7 +50,8 @@
     }
     
     public function logout(){
-      $this->session->unset_userdata('email');
+      $dataUnset = ['email','level','id'];
+      $this->session->unset_userdata($dataUnset);
       $this->session->set_flashdata('message', 
       '<div class="alert alert-success" role="alert">Anda sudah logout ! </div>');
       redirect('auth');

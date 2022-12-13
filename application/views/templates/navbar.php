@@ -61,7 +61,7 @@
           <div class="dropdown no-arrow">
             <a class="p-0 dropdown-toggle d-flex align-items-center hidden-arrow nav-link font-weight-bold text-white" href="#" id="navbarDropdownMenuAvatar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <?= $user['nama'] ?>
-              <img height="30" class="ml-2 img-profile rounded-circle" src="<?= base_url('assets') ?>/img/undraw_profile.svg">
+              <img height="30" class="ml-2 img-profile rounded-circle" src="<?= base_url('assets/img/akun/') . $user['gambar'] ?>">
             </a>
             <ul class="dropdown-menu dropdown-menu-end shadow animated--grow-in" aria-labelledby="navbarDropdownMenuAvatar">
               <li>

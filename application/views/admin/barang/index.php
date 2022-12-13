@@ -80,7 +80,7 @@
           <span aria-hidden="true">×</span>
         </button>
       </div>
-      <form action="<?= base_url("admin") ?>" method="POST" enctype="multipart/form-data">
+      <form action="<?= base_url("admin/dataBarang") ?>" method="POST" enctype="multipart/form-data">
         <div class="modal-body">
           <div class="form-group">
             <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Barang">
