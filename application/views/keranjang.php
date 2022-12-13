@@ -6,8 +6,12 @@
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h3 class="fw-normal mb-0 text-gray-800">Keranjang</h3>
         </div>
-        <?php foreach($keranjang as $item): ?>
-
+        <?php if(!$keranjang) : ?>
+          <div class="card rounded-3 mb-4 p-3 text-center">
+            <h1>Keranjang Kosong</h1>
+          </div>
+        <?php else : 
+        foreach($keranjang as $item): ?>
         <div class="card rounded-3 mb-4">
           <div class="card-body p-4">
             <div class="row d-flex justify-content-between align-items-center">
@@ -48,7 +52,7 @@
             <button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
           </div>
         </div>
-
+        <?php endif; ?>
       </div>
     </div>
   </div>

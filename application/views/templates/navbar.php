@@ -13,16 +13,18 @@
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link text-white" href="<?= base_url('landingPage') ?>">Home</a>
+          <a class="nav-link text-white" href="<?= site_url('landingPage') ?>">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="#">Produk</a>
         </li>
-        <?php if ($this->session->userdata('level') != 'pelanggan') : ?>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="<?= base_url('admin') ?>">Admin</a>
-          </li>
-        <?php endif; ?>
+        <?php if ($user) { ?>
+          <?php if ($user['level'] != 'pelanggan') { ?>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="<?= base_url('admin') ?>">Admin</a>
+            </li>
+        <?php }
+        }; ?>
       </ul>
       <!-- Left links -->
 
@@ -53,36 +55,43 @@
             </li>
           </ul>
         </div>
-        <div class="divider border-left border-3 border-danger h-50 align-self-center mx-3"></div>
+        <div class="vr mx-3 bg-white"></div>
         <!-- Avatar -->
-        <div class="dropdown no-arrow ml-3">
-          <a class="dropdown-toggle d-flex align-items-center hidden-arrow nav-link font-weight-bold text-white" href="#" id="navbarDropdownMenuAvatar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <?= $user['nama'] ?>
-            <img height="30" class="ml-2 img-profile rounded-circle" src="<?= base_url('assets') ?>/img/undraw_profile.svg">
+        <?php if (isset($user)) : ?>
+          <div class="dropdown no-arrow">
+            <a class="p-0 dropdown-toggle d-flex align-items-center hidden-arrow nav-link font-weight-bold text-white" href="#" id="navbarDropdownMenuAvatar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <?= $user['nama'] ?>
+              <img height="30" class="ml-2 img-profile rounded-circle" src="<?= base_url('assets') ?>/img/undraw_profile.svg">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow animated--grow-in" aria-labelledby="navbarDropdownMenuAvatar">
+              <li>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  My profile
+                </a>
+              </li>
+              <div class="dropdown-divider "></div>
+              <li>
+                <a class="dropdown-item" href="#">
+                  <i class="fa-sharp fa-solid fa-gear fa-fw mr-2 text-gray-400"></i>
+                  Settings
+                </a>
+              </li>
+              <div class="dropdown-divider "></div>
+              <li>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </li>
+            </ul>
+          </div>
+        <?php else : ?>
+          <a class="link-light me-3" href="<?= site_url('auth') ?>">
+          <i class="fa-solid fa-right-to-bracket"></i>
+          Login
           </a>
-          <ul class="dropdown-menu dropdown-menu-end shadow animated--grow-in" aria-labelledby="navbarDropdownMenuAvatar">
-            <li>
-              <a class="dropdown-item" href="#">
-                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                My profile
-              </a>
-            </li>
-            <div class="dropdown-divider "></div>
-            <li>
-              <a class="dropdown-item" href="#">
-                <i class="fa-sharp fa-solid fa-gear fa-fw mr-2 text-gray-400"></i>
-                Settings
-              </a>
-            </li>
-            <div class="dropdown-divider "></div>
-            <li>
-              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                Logout
-              </a>
-            </li>
-          </ul>
-        </div>
+        <?php endif; ?>
       </div>
       <!-- Right elements -->
     </div>

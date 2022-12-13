@@ -4,6 +4,7 @@
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
       <thead>
         <tr>
+          <th scope="col">Id</th>
           <th scope="col">Nama</th>
           <th scope="col">Email</th>
           <th scope="col">Level</th>
@@ -12,6 +13,7 @@
       <tbody>
         <?php foreach ($akun as $user) : ?>
           <tr>
+            <td><?= $user['id'] ?></td>
             <td><?= $user['nama'] ?></td>
             <td><?= $user['email'] ?></td>
             <td><?= $user['level'] ?></td>

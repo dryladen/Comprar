@@ -127,6 +127,7 @@ class Admin extends CI_Controller
   public function hero()
   {
     $data['title'] = "Data Hero";
+    $data['hero'] = $this->data->get('hero');
     $this->_template('hero', $data);
   }
   public function akun()
